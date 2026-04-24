@@ -1,14 +1,4 @@
-/* ==============================================
-   script.js — ProgramADA
-   Funcionalidades: navbar, scroll reveal,
-   menu mobile, lightbox da galeria
-   ============================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* ────────────────────────────────────────────
-     1. NAVBAR — scroll effect + active link
-  ──────────────────────────────────────────── */
   const navbar = document.getElementById('navbar');
 
   window.addEventListener('scroll', () => {
@@ -19,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  /* Active nav link baseado na seção visível */
   const sections = document.querySelectorAll('section[id], footer[id]');
   const navLinks  = document.querySelectorAll('.nav-links a');
 
@@ -38,11 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('scroll', activateNavLink, { passive: true });
-
-
-  /* ────────────────────────────────────────────
-     2. MENU MOBILE (hamburger)
-  ──────────────────────────────────────────── */
+   
   const hamburger = document.getElementById('hamburger');
   const navLinksEl = document.getElementById('navLinks');
 
@@ -52,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.setAttribute('aria-expanded', isOpen);
   });
 
-  /* Fecha o menu ao clicar num link */
   navLinksEl.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinksEl.classList.remove('open');
@@ -60,8 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.setAttribute('aria-expanded', false);
     });
   });
-
-  /* Fecha ao clicar fora */
   document.addEventListener('click', (e) => {
     if (!navbar.contains(e.target)) {
       navLinksEl.classList.remove('open');
@@ -69,11 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.setAttribute('aria-expanded', false);
     }
   });
-
-
-  /* ────────────────────────────────────────────
-     3. SCROLL REVEAL
-  ──────────────────────────────────────────── */
+   
   const revealEls = document.querySelectorAll('.reveal');
 
   const revealObserver = new IntersectionObserver(
@@ -81,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target); // anima só uma vez
+          revealObserver.unobserve(entry.target); 
         }
       });
     },
@@ -90,10 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealEls.forEach(el => revealObserver.observe(el));
 
-
-  /* ────────────────────────────────────────────
-     4. LIGHTBOX DA GALERIA
-  ──────────────────────────────────────────── */
   const galleryItems = document.querySelectorAll('.gallery-item');
   const lightbox     = document.getElementById('lightbox');
   const lightboxImg  = document.getElementById('lightboxImg');
@@ -104,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentIndex = 0;
 
-  /* Coleta todas as imagens da galeria */
   const galleryImages = Array.from(galleryItems).map(item => {
     const img = item.querySelector('img');
     return {
@@ -141,7 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
 
-    /* Oculta botões se for o primeiro/último */
     lightboxPrev.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
     lightboxNext.style.visibility = currentIndex === galleryImages.length - 1 ? 'hidden' : 'visible';
   };
@@ -160,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  /* Abre o lightbox ao clicar em cada item */
   galleryItems.forEach((item) => {
     item.addEventListener('click', () => {
       const index = parseInt(item.getAttribute('data-index'), 10);
@@ -168,17 +139,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* Controles */
   lightboxClose.addEventListener('click', closeLightbox);
   lightboxPrev.addEventListener('click', showPrev);
   lightboxNext.addEventListener('click', showNext);
 
-  /* Fecha ao clicar fora da imagem */
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
 
-  /* Navegação por teclado */
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('open')) return;
     switch (e.key) {
@@ -188,7 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* Swipe no mobile */
   let touchStartX = 0;
   lightbox.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].clientX;
@@ -200,11 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
       diff < 0 ? showNext() : showPrev();
     }
   }, { passive: true });
-
-
-  /* ────────────────────────────────────────────
-     5. SMOOTH SCROLL para links internos
-  ──────────────────────────────────────────── */
+   
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       const targetId = anchor.getAttribute('href');
@@ -217,11 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
-  /* ────────────────────────────────────────────
-     6. HIGHLIGHT do link ativo no CSS
-  ──────────────────────────────────────────── */
-  /* Adiciona estilo dinamicamente para o estado .active */
   const style = document.createElement('style');
   style.textContent = `
     .nav-links a.active {

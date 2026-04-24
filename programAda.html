@@ -1,157 +1,128 @@
-import EmptyContainer from "./emptyCont";
-import GalleryShowcase from "./gallery";
-import "./programAda.css";
-
-const Desktop1 = () => {
-  return (
-    <div className="desktop-1">
-      <img className="desktop-view-icon" alt="" src="/Desktop-View@2x.png" />
-      <div className="at-sign" />
-      <EmptyContainer />
-      <div className="desktop-1-child" />
-      <main className="desktop-1-inner">
-        <section className="frame-parent">
-          <section className="frame-wrapper">
-            <div className="nossa-histria-parent">
-              <h2 className="nossa-histria">Nossa história</h2>
-              <div className="o-programada-surgiu-da-vontade-wrapper">
-                <div className="o-programada-surgiu-da-vontade-container">
-                  <span>
-                    O ProgramADA surgiu da vontade de ter um espaço dedicado às
-                    mulheres do curso, focado em mostrar todas as possibilidades
-                    que a área da tecnologia oferece. Percebemos que faltava um
-                    momento para discutir carreira e entender onde as estudantes
-                    podem chegar dentro do mercado tech.
-                    <br />
-                    <br />
-                    Para a nossa primeira edição, tivemos a participação da 
-                  </span>
-                  <span className="patrcia-wazlawick-da">
-                    Patrícia Wazlawick, da Monica Hillman e da Franciele Manfio
-                  </span>
-                  <span>{`. O foco principal foi o protagonismo feminino na tecnologia, onde discutimos os desafios da área, as oportunidades de mercado e como as mulheres podem ocupar espaços de liderança e inovação. `}</span>
-                </div>
-              </div>
-            </div>
-          </section>
-          <div className="event-showcase-wrapper">
-            <div className="event-showcase">
-              <h2 className="edies">Edições</h2>
-              <section className="event-showcase-inner">
-                <div className="parent">
-                  <h2 className="edies">2025</h2>
-                  <div className="edition-details-wrapper">
-                    <div className="edition-details">
-                      <img
-                        className="details-background-icon"
-                        loading="lazy"
-                        alt=""
-                        src="/Details-Background@2x.png"
-                      />
-                      <div className="patricia-details">
-                        <div className="patricia-wazlawick-palestra-container">
-                          <span>
-                            <span className="patrcia-wazlawick-da">
-                              Patricia Wazlawick <br />
-                            </span>
-                            <span>
-                              palestra sobre “Vida, Inteligência e Tecnologia” e
-                              sua viagem para Estônia
-                            </span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section className="event-showcase-child">
-                <div className="showcase-images-parent">
-                  <img
-                    className="details-background-icon"
-                    loading="lazy"
-                    alt=""
-                    src="/Showcase-Images@2x.png"
-                  />
-                  <div className="image-container">
-                    <div className="monica-hillman-palestra-container">
-                      <span>
-                        <span className="patrcia-wazlawick-da">
-                          Monica Hillman <br />
-                        </span>
-                        <span>
-                          palestra sobre carreira tech e suas experiências na
-                          Alura e Magalu
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section className="event-showcase-child">
-                <div className="rectangle-parent">
-                  <img
-                    className="details-background-icon"
-                    loading="lazy"
-                    alt=""
-                    src="/Rectangle-8@2x.png"
-                  />
-                  <div className="franciele-manfio-palestra-sobr-wrapper">
-                    <div className="franciele-manfio-palestra-container">
-                      <span className="patrcia-wazlawick-da">
-                        Franciele Manfio
-                        <br />
-                      </span>
-                      <span>palestra sobre empreendedorismo e liderança</span>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-          <div className="galeria-wrapper">
-            <h2 className="nossa-histria">Galeria</h2>
-          </div>
-          <GalleryShowcase />
-          <div className="contact-container-wrapper">
-            <div className="contact-container">
-              <div className="contact-info">
-                <h2 className="nossos-contatos">Nossos contatos</h2>
-                <h2 className="nossos-contatos">Nossos redes sociais</h2>
-              </div>
-              <div className="contact-handles-wrapper">
-                <div className="contact-handles">
-                  <div className="account-addresses">
-                    <div className="coordsiamfedubr-sofiatonet">
-                      coordsi@amf.edu.br
-                      <br />
-                      sofia.tonetto@amf.edu.br
-                      <br />
-                      fernanda.soares@amf.edu.br
-                    </div>
-                  </div>
-                  <div className="handle-container">
-                    <div className="siamf-faculdadeam">
-                      @si.amf
-                      <br />
-                      @faculdadeam
-                    </div>
-                  </div>
-                  <div className="handle-container">
-                    <div className="siamf-faculdadeam">
-                      @nandastwo
-                      <br />
-                      @sofiatonetto
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProgramADA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="programAda.css">
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-left">
+      <img src="img/programada logo 1.png" alt="Logo" class="nav-logo-img">
     </div>
-  );
-};
+    <ul class="nav-links">
+      <li><a href="#historia">Nossa história</a></li>
+      <li><a href="#edicoes">Edições</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
 
-export default Desktop1;
+  <section id="hero">
+    <div class="hero-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-tag">TECNOLOGIA COM IDENTIDADE, PROPÓSITO E FUTURO</span>
+      <h1 class="hero-title">Program<em>ADA</em></h1>
+      <p class="hero-subtitle">
+        Espaço dedicado para mostrar todas as possibilidades que a área da tecnologia oferece para sua carreira.
+      </p>
+      <div class="hero-cta">
+        <a href="#historia" class="btn btn-primary">Conheça nossa história</a>
+        <a href="#edicoes" class="btn btn-outline">Ver edições</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="historia" style="padding: 80px 6vw;">
+    <div class="container">
+      <h2 class="section-title">Nossa história</h2>
+      <p class="p-destaque">O ProgramADA surgiu da vontade de ter um espaço dedicado às mulheres do curso, focado em mostrar todas as possibilidades que a área da tecnologia oferece. Percebemos que faltava um momento para discutir carreira e entender onde as estudantes podem chegar dentro do mercado tech.</p>
+      <p class="p-normal">Para a nossa primeira edição, tivemos a participação da <span>Patrícia Wazlawick, da Monica Hillman e da Franciele Manfio</span>. O foco principal foi o protagonismo feminino na tecnologia, onde discutimos os desafios da área, as oportunidades de mercado e como as mulheres podem ocupar espaços de liderança e inovação.</p>
+    </div>
+  </section>
+
+  <section id="edicoes" style="padding: 40px 6vw; background-color: #f9f9f9;">
+    <div class="container">
+      <h2 class="section-title">Edições</h2>
+      <div class="year-badge">2025</div>
+      <div class="speakers-list">
+        <article class="speaker-row">
+          <img src="images/patricia.jpg" alt="Patricia">
+          <div class="speaker-info">
+            <h4 class="speaker-name">Patricia Wazlawick</h4>
+            <p class="speaker-desc">palestra sobre "Vida, Inteligência e Tecnologia" e sua viagem para Estônia</p>
+          </div>
+        </article>
+        <article class="speaker-row">
+          <img src="images/monica.jpg" alt="Monica">
+          <div class="speaker-info">
+            <h4 class="speaker-name">Monica Hillman</h4>
+            <p class="speaker-desc">palestra sobre carreira tech e suas experiências na Alura e Magalu</p>
+          </div>
+        </article>
+        <article class="speaker-row">
+          <img src="images/franciele.jpg" alt="Franciele">
+          <div class="speaker-info">
+            <h4 class="speaker-name">Franciele Manfio</h4>
+            <p class="speaker-desc">palestra sobre empreendedorismo e liderança</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" style="padding: 60px 6vw;">
+    <div class="container">
+      <h2 class="section-title">Galeria</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/foto1.jpg"></div>
+        <div class="gallery-item"><img src="images/foto2.jpg"></div>
+        <div class="gallery-item"><img src="images/foto3.jpg"></div>
+        <div class="gallery-item"><img src="images/foto4.jpg"></div>
+        <div class="gallery-item"><img src="images/foto5.jpg"></div>
+      </div>
+      <div class="gallery-grid-bottom">
+        <div class="gallery-item"><img src="images/foto6.jpg"></div>
+        <div class="gallery-item"><img src="images/foto7.jpg"></div>
+        <div class="gallery-item"><img src="images/foto8.jpg"></div>
+        <div class="gallery-item"><img src="images/foto9.jpg"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contato">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logos">
+          <img src="images/logo-amf.png" alt="AMF">
+          <img src="images/logo-si.png" alt="SI">
+          <img src="images/logo-fundacao.png" alt="Fundação">
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Nossos contatos</h4>
+        <p>coordsi@amf.edu.br</p>
+        <p>sofia.tonetto@amf.edu.br</p>
+        <p>fernanda.soares@amf.edu.br</p>
+      </div>
+      <div class="footer-col">
+        <h4>Nossas redes sociais</h4>
+        <div class="social-links">
+          <p>@si.amf</p>
+          <p>@faculdadeam</p>
+          <p>@nandastwo</p>
+          <p>@sofiatonetto</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

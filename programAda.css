@@ -1,0 +1,371 @@
+.desktop-1 {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: var(--padding-0) var(--padding-0) 101px;
+  box-sizing: border-box;
+  isolation: isolate;
+  gap: 38px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.desktop-view-icon {
+  width: 100%;
+  height: 262px;
+  position: absolute;
+  margin: 0 !important;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.at-sign,
+.desktop-1-child {
+  width: 96px;
+  height: 96px;
+  position: relative;
+  display: none;
+  z-index: 1;
+  flex-shrink: 0;
+}
+.desktop-1-child {
+  width: 177px;
+  height: 248px;
+  z-index: 3;
+}
+.desktop-1-inner {
+  width: 1429px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: var(--padding-0) 30px;
+  box-sizing: border-box;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.frame-parent {
+  flex: 1;
+  flex-direction: column;
+  gap: 52px;
+  text-align: left;
+  font-size: var(--fs-32);
+  color: var(--color-white);
+  font-family: var(--font-jersey-25);
+}
+.frame-parent,
+.frame-wrapper,
+.nossa-histria-parent {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.frame-wrapper {
+  width: 1334px;
+  padding: var(--padding-0) var(--padding-5);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--fs-32);
+  color: var(--color-black);
+  font-family: var(--font-jersey-25);
+}
+.nossa-histria-parent {
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+}
+.nossa-histria {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.o-programada-surgiu-da-vontade-wrapper {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-0) var(--padding-0) 23px;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-size: var(--fs-22);
+}
+.o-programada-surgiu-da-vontade-container {
+  height: 132px;
+  flex: 1;
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+.patrcia-wazlawick-da {
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.event-showcase,
+.event-showcase-wrapper {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.event-showcase-wrapper {
+  width: 844px;
+  padding: var(--padding-0) var(--padding-5);
+  box-sizing: border-box;
+}
+.event-showcase {
+  flex: 1;
+  flex-direction: column;
+  gap: 24px;
+}
+.edies {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  background: var(--gradient-2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.event-showcase-inner {
+  align-self: stretch;
+  justify-content: flex-end;
+  text-align: left;
+  font-size: var(--fs-32);
+  color: var(--color-black);
+  font-family: var(--font-jersey-25);
+}
+.edition-details-wrapper,
+.event-showcase-inner,
+.parent {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.parent {
+  width: 787px;
+  flex-direction: column;
+  gap: 17px;
+}
+.edition-details-wrapper {
+  align-self: stretch;
+  justify-content: flex-end;
+  font-size: var(--fs-22);
+}
+.edition-details {
+  width: 740px;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  gap: 7px;
+  max-width: 100%;
+}
+.details-background-icon {
+  height: 197px;
+  width: 154px;
+  position: relative;
+  object-fit: cover;
+}
+.patricia-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-0) 66px;
+  box-sizing: border-box;
+  min-width: 376px;
+  max-width: 100%;
+}
+.patricia-wazlawick-palestra-container {
+  align-self: stretch;
+  height: 57px;
+  position: relative;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+}
+.event-showcase-child {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--fs-22);
+  color: var(--color-black);
+  font-family: var(--font-jersey-25);
+}
+.showcase-images-parent {
+  display: flex;
+  align-items: flex-end;
+  gap: 7px;
+  max-width: 100%;
+}
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-0) 72px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.monica-hillman-palestra-container {
+  height: 44px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.rectangle-parent {
+  width: 740px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 7px;
+  max-width: 100%;
+}
+.franciele-manfio-palestra-sobr-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 66px var(--padding-0) var(--padding-0);
+  box-sizing: border-box;
+  min-width: 376px;
+  max-width: 100%;
+}
+.franciele-manfio-palestra-container {
+  align-self: stretch;
+  position: relative;
+}
+.galeria-wrapper {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-0) 12px;
+}
+.contact-container-wrapper {
+  align-self: stretch;
+  justify-content: flex-end;
+  font-size: var(--fs-25);
+}
+.contact-container,
+.contact-container-wrapper,
+.contact-info {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.contact-container {
+  width: 769px;
+  flex-direction: column;
+  gap: 14px;
+}
+.contact-info {
+  width: 618px;
+  justify-content: space-between;
+  gap: var(--gap-20);
+}
+.nossos-contatos {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  z-index: 1;
+}
+.contact-handles,
+.contact-handles-wrapper {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.contact-handles-wrapper {
+  align-self: stretch;
+  padding: var(--padding-0) var(--padding-0) var(--padding-0) var(--padding-28);
+  box-sizing: border-box;
+}
+.contact-handles {
+  flex: 1;
+  justify-content: space-between;
+  gap: var(--gap-20);
+}
+.account-addresses {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--padding-0) var(--padding-20) var(--padding-0) var(--padding-0);
+}
+.coordsiamfedubr-sofiatonet {
+  height: 75px;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+.handle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 13px var(--padding-0) var(--padding-0);
+}
+.siamf-faculdadeam {
+  position: relative;
+  z-index: 1;
+}
+@media screen and (max-width: 900px) {
+  .desktop-1 {
+    gap: var(--gap-19);
+  }
+  .edies,
+  .nossa-histria {
+    font-size: var(--fs-26);
+  }
+  .contact-handles,
+  .showcase-images-parent {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 675px) {
+  .frame-parent {
+    gap: 26px;
+  }
+  .franciele-manfio-palestra-sobr-wrapper,
+  .patricia-details {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nossa-histria {
+    font-size: var(--fs-19);
+  }
+  .o-programada-surgiu-da-vontade-container {
+    font-size: var(--fs-18);
+  }
+  .edies {
+    font-size: var(--fs-19);
+  }
+  .franciele-manfio-palestra-container,
+  .monica-hillman-palestra-container,
+  .patricia-wazlawick-palestra-container {
+    font-size: var(--fs-18);
+  }
+  .contact-info {
+    flex-wrap: wrap;
+  }
+  .coordsiamfedubr-sofiatonet,
+  .nossos-contatos,
+  .siamf-faculdadeam {
+    font-size: var(--fs-20);
+  }
+}

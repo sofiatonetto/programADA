@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+25:ital,wght@0,400&display=swap");
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* Common Style Variables */
+
+  /* Color */
+  --color-black: #000;
+  --color-white: #fff;
+
+  /* Gap */
+  --gap-16: 16px;
+  --gap-19: 19px;
+  --gap-20: 20px;
+
+  /* Padding */
+  --padding-0: 0px;
+  --padding-1: 1px;
+  --padding-5: 5px;
+  --padding-20: 20px;
+  --padding-28: 28px;
+  --padding-60: 60px;
+  --padding-80: 80px;
+
+  /* Font */
+  --font-jersey-25: Jersey 25;
+
+  /* FontSize */
+  --fs-18: 18px;
+  --fs-19: 19px;
+  --fs-20: 20px;
+  --fs-22: 22px;
+  --fs-25: 25px;
+  --fs-26: 26px;
+  --fs-32: 32px;
+
+  /* Gradients */
+  --gradient-1: linear-gradient(90deg, #da5e80, #61418e);
+  --gradient-2: linear-gradient(180deg, #da5e80, #61418e);
+
+  /* WidthHeights */
+  --height-32: 32px;
+  --height-156: 156px;
+  --max-w-245: 245px;
+  --min-w-240: 240px;
+
+  --left-0: 0px;
+  --top-0: 0px;
+}

@@ -168,6 +168,32 @@ body {
   color: var(--purple);
 }
 
+#edicoes,
+#galeria,
+#equipe {
+  min-height: calc(100vh - var(--nav-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 6vw 60px;
+}
+
+#edicoes .container,
+#galeria .container,
+#equipe .container {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  #edicoes,
+  #galeria,
+  #equipe {
+    min-height: auto;
+    padding: 40px 6vw;
+  }
+}
+
 /* FOOTER */
 footer {
   background: linear-gradient(to right, #d43a8a, #7d2a84);

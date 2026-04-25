@@ -196,6 +196,11 @@ footer { background: linear-gradient(to right, var(--pink), var(--purple)); padd
   .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
   .footer-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
   .footer-content { flex-direction: column; align-items: center; gap: 20px; }
+
+  #hero {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
 
 @media (max-width: 500px) {

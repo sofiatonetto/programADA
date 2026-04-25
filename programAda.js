@@ -1,7 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+
+  // Hamburger Menu Toggle
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu when clicking on a link
+  navAnchors.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navbar.contains(e.target)) {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    }
+  });
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -20,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    navLinks.forEach((a) => {
+    navAnchors.forEach((a) => {
       a.style.opacity = "0.7";
       if (a.getAttribute("href").includes(current)) {
         a.style.opacity = "1";

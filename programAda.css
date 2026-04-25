@@ -44,6 +44,36 @@ body {
 .nav-links { display: flex; gap: 35px; list-style: none; }
 .nav-links a { color: var(--white); text-decoration: none; font-weight: 700; font-family: 'Syne', sans-serif; }
 
+/* Hamburger Menu */
+.hamburger { 
+  display: none; 
+  flex-direction: column; 
+  gap: 6px; 
+  background: none; 
+  border: none; 
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span { 
+  width: 25px; 
+  height: 3px; 
+  background: var(--white); 
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) { 
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) { 
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) { 
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
 #hero {
   min-height: 100vh;
   display: flex;
@@ -54,12 +84,21 @@ body {
   background: linear-gradient(160deg, rgba(212, 58, 138, 0.4) 0%, rgba(125, 42, 132, 0.4) 100%), url('img/fundo.jpeg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: var(--white);
 }
 
-.hero-logo { height: clamp(3rem, 8vw, 5rem); margin-bottom: 20px; }
+.hero-content {
+  width: 100%;
+  max-width: 900px;
+}
+
+.hero-logo { height: clamp(3rem, 8vw, 5rem); margin-bottom: 20px; max-width: 100%; }
+.hero-title { width: 100%; }
 .hero-tag { display: inline-block; background: rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.3); }
-.hero-subtitle { font-size: 1.2rem; margin-bottom: 40px; max-width: 700px; }
+.hero-subtitle { font-size: 1.2rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+.hero-cta { display: flex; justify-content: center; gap: 20px; }
 
 .btn { padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-family: 'Syne', sans-serif; transition: 0.3s; }
 .btn-primary { background: var(--white); color: var(--purple); }
@@ -113,8 +152,38 @@ footer { background: linear-gradient(to right, var(--pink), var(--purple)); padd
 }
 
 @media (max-width: 700px) {
+  .hamburger { display: flex; z-index: 1100; }
+  
+  .nav-links { 
+    position: absolute; 
+    top: var(--nav-h); 
+    left: 0; 
+    right: 0;
+    flex-direction: column; 
+    background: linear-gradient(to right, var(--purple), var(--pink));
+    gap: 0;
+    padding: 20px 5vw;
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    font-size: 0.95rem;
+  }
+  
+  .nav-links.active { 
+    max-height: 400px;
+  }
+  
+  .nav-links li { 
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+  
   .container, #navbar, #hero, #historia, #edicoes, #galeria, #equipe, footer { padding-left: 5vw; padding-right: 5vw; }
-  .nav-links { gap: 15px; font-size: 0.95rem; }
   .hero-tag { font-size: 0.7rem; padding: 6px 16px; }
   .hero-subtitle { font-size: 1rem; margin-bottom: 30px; }
   .hero-cta { display: flex; flex-direction: column; align-items: center; gap: 12px; }
@@ -130,14 +199,29 @@ footer { background: linear-gradient(to right, var(--pink), var(--purple)); padd
 }
 
 @media (max-width: 500px) {
-  :root { --nav-h: 80px; }
+  :root { --nav-h: 70px; }
   #navbar { height: var(--nav-h); padding: 0 3vw; }
-  .nav-logo-img { height: 42px; }
-  .nav-links { flex-wrap: wrap; justify-content: center; gap: 12px; }
-  .hero-title img { max-width: 240px; }
-  .hero-subtitle { font-size: 0.95rem; }
+  .nav-logo-img { height: 40px; }
+  
+  .nav-links { 
+    max-height: 0;
+    padding: 15px 3vw;
+  }
+  
+  .nav-links.active { 
+    max-height: 350px;
+  }
+  
+  .hero-title img { max-width: 200px; }
+  .hero-logo { height: clamp(2.5rem, 6vw, 4rem); }
+  .hero-subtitle { font-size: 0.9rem; }
+  .hero-tag { font-size: 0.65rem; padding: 5px 12px; }
+  .btn { padding: 12px 24px; font-size: 0.95rem; }
+  .btn-outline { margin-left: 0; }
+  
   .gallery-grid, .gallery-grid-bottom { grid-template-columns: 1fr; }
   .gallery-item img { height: auto; }
-  .member-img img { width: 160px; height: 160px; }
-  .footer-logos img { height: 40px; margin-right: 0; }
+  .member-img img { width: 140px; height: 140px; }
+  .footer-logos img { height: 35px; margin-right: 0; }
+  .footer-col p { font-size: 0.9rem; }
 }

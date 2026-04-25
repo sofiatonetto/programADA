@@ -92,7 +92,7 @@ body {
   max-width: 900px;
 }
 
-.hero-logo { height: clamp(2.5rem, 15vw, 5rem); margin-bottom: 20px; max-width: 100%; }
+.hero-logo { height: auto; max-width: 100%; width: 100%; max-width: 500px; margin-bottom: 20px; }
 .hero-title { width: 100%; }
 .hero-tag { display: inline-block; background: rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.3); }
 .hero-subtitle { font-size: 1.2rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
@@ -184,6 +184,7 @@ footer { background: linear-gradient(to right, var(--pink), var(--purple)); padd
   
   .container, #navbar, #hero, #historia, #edicoes, #galeria, #equipe, footer { padding-left: 5vw; padding-right: 5vw; }
   .hero-tag { font-size: 0.7rem; padding: 6px 16px; }
+  .hero-logo { max-width: 90%; }
   .hero-subtitle { font-size: 1rem; margin-bottom: 30px; }
   .hero-cta { display: flex; flex-direction: column; align-items: center; gap: 12px; }
   .btn { width: 100%; max-width: 280px; text-align: center; }
@@ -211,8 +212,8 @@ footer { background: linear-gradient(to right, var(--pink), var(--purple)); padd
     max-height: 350px;
   }
   
-  .hero-title img { max-width: 200px; }
-  .hero-logo { height: clamp(2.5rem, 6vw, 4rem); }
+  .hero-title img { max-width: 180px; }
+  .hero-logo { max-width: 180px; }
   .hero-subtitle { font-size: 0.9rem; }
   .hero-tag { font-size: 0.65rem; padding: 5px 12px; }
   .btn { padding: 12px 24px; font-size: 0.95rem; }

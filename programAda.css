@@ -51,7 +51,9 @@ body {
   justify-content: center;
   text-align: center;
   padding: var(--nav-h) 6vw 0;
-  background: linear-gradient(160deg, var(--pink) 0%, var(--purple) 100%);
+  background: linear-gradient(160deg, rgba(212, 58, 138, 0.4) 0%, rgba(125, 42, 132, 0.4) 100%), url('img/fundo.jpeg');
+  background-size: cover;
+  background-position: center;
   color: var(--white);
 }
 

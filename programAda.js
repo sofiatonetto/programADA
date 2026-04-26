@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const sponsorForm = document.getElementById('sponsorForm');
 const statusText = document.getElementById('formStatus');
-const scriptURL = 'https://script.google.com/macros/s/AKfycbz4fjLpk85wAYjTdjWHGRGQ0jSg8-3k55fiXxVWdUOe_SqFUNouOCCakRLaQJ29WBPtwA/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbztkjBwa5cennfO1W_a674cMAAkN3jaeXZGeR4kngh9Ua6Y5NLvKrq-IH7r56s3p-lAVQ/exec';
 
 sponsorForm.addEventListener('submit', e => {
   e.preventDefault();

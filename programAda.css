@@ -471,94 +471,7 @@ footer {
     height: 220px;
   }
 }
-
-.patrocinio-wrapper {
-  display: flex;
-  gap: 60px;
-  align-items: center;
-}
-
-.patrocinio-left,
-.patrocinio-right {
-  flex: 1;
-}
-
-.sponsor-logos-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 20px;
-}
-
-.sponsor-logos-grid img {
-  height: 60px;
-  filter: grayscale(1);
-  opacity: 0.6;
-  transition: 0.3s;
-  width: auto;             
-  max-width: 100%;        
-  object-fit: contain;    
-}
-
-.sponsor-logos-grid img:hover {
-  filter: grayscale(0);
-  opacity: 1;
-  width: auto;            
-  max-width: 100%;        
-  object-fit: contain;   
-}
-
-.sponsor-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.sponsor-form input,
-.sponsor-form textarea {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1rem;
-}
-
-.sponsor-form textarea {
-  height: 100px;
-  resize: none;
-}
-
-#formStatus {
-  font-size: 0.9rem;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-@media (max-width: 900px) {
-  .patrocinio-wrapper {
-    flex-direction: column;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .footer-link {
-    justify-content: center;
-  }
-}
-
 #patrocinio {
-  /* Gradiente padrão do site conforme seu CSS */
   background: linear-gradient(to right, var(--purple), var(--pink));
   padding: 80px 6vw;
 }
@@ -573,35 +486,50 @@ footer {
   flex: 1;
 }
 
+.sponsor-logos-grid {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 25px;
+  margin-top: 20px;
+  justify-content: flex-start; 
+}
+
+.sponsor-logos-grid img {
+  height: 60px;      
+  width: auto;       
+  object-fit: contain; 
+  filter: brightness(0) invert(1); 
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.sponsor-logos-grid img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
 .sponsor-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.sponsor-form input, .sponsor-form textarea {
+.sponsor-form input, 
+.sponsor-form textarea {
   padding: 15px;
   border: none;
   border-radius: 10px;
   font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
 }
 
-.sponsor-logos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 20px;
+.sponsor-form textarea {
+  height: 120px;
+  resize: vertical;
 }
-
-.sponsor-logos-grid img {
-  width: 100%;
-  max-width: 120px;
-  filter: brightness(0) invert(1);
-  opacity: 0.8;
-  transition: 0.3s;
-}
-
-.sponsor-logos-grid img:hover { opacity: 1; }
 
 @media (max-width: 900px) {
-  .patrocinio-wrapper { flex-direction: column; }
+  .patrocinio-wrapper {
+    flex-direction: column-reverse; 
+  }
 }

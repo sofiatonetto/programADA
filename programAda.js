@@ -75,3 +75,24 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 });
+
+const sponsorForm = document.getElementById('sponsorForm');
+const statusText = document.getElementById('formStatus');
+const scriptURL = 'https://script.google.com/macros/s/AKfycbz4fjLpk85wAYjTdjWHGRGQ0jSg8-3k55fiXxVWdUOe_SqFUNouOCCakRLaQJ29WBPtwA/exec';
+
+sponsorForm.addEventListener('submit', e => {
+  e.preventDefault();
+  document.getElementById('submitBtn').disabled = true;
+  statusText.innerText = "Enviando...";
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(sponsorForm)})
+    .then(response => {
+      statusText.innerText = "Sucesso! Verifique seu e-mail.";
+      sponsorForm.reset();
+      document.getElementById('submitBtn').disabled = false;
+    })
+    .catch(error => {
+      statusText.innerText = "Erro ao enviar. Tente novamente.";
+      document.getElementById('submitBtn').disabled = false;
+    });
+});

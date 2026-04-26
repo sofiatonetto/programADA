@@ -151,7 +151,10 @@ body {
   color: var(--white);
 }
 
-#historia, #edicoes, #galeria, #equipe {
+#historia,
+#edicoes,
+#galeria,
+#equipe {
   padding: 80px 6vw;
 }
 
@@ -287,7 +290,8 @@ body {
   padding: 60px 0;
 }
 
-.mySwiper, .mySwiperReverse {
+.mySwiper,
+.mySwiperReverse {
   width: 100%;
   padding: 10px 0;
 }
@@ -320,7 +324,7 @@ body {
   border-radius: 50%;
   border: 4px solid var(--pink);
   object-fit: cover;
-  object-position: center top; 
+  object-position: center top;
 }
 
 .member-name {
@@ -362,15 +366,15 @@ footer {
 .footer-content {
   display: flex;
   flex: 2;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: flex-start;
 }
 
-.contact-col, 
+.contact-col,
 .social-col {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
+  align-items: flex-start;
 }
 
 .footer-col h4 {
@@ -386,7 +390,7 @@ footer {
   font-size: 0.95rem;
   margin-bottom: 12px;
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   align-items: center;
   gap: 12px;
   transition: 0.3s;
@@ -406,20 +410,24 @@ footer {
 }
 
 @media (max-width: 1000px) {
-  .footer-inner, 
+
+  .footer-inner,
   .footer-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 40px;
   }
-  .contact-col, 
+
+  .contact-col,
   .social-col {
     align-items: center;
   }
+
   .footer-link {
     justify-content: center;
   }
+
   .team-grid {
     flex-direction: column;
     align-items: center;
@@ -431,6 +439,7 @@ footer {
   .hamburger {
     display: flex;
   }
+
   .nav-links {
     position: absolute;
     top: var(--nav-h);
@@ -443,18 +452,150 @@ footer {
     transition: 0.3s;
     padding: 0 5vw;
   }
+
   .nav-links.active {
     max-height: 400px;
     padding: 20px 5vw;
   }
+
   .member-img img {
     width: 160px;
     height: 160px;
   }
+
   .speakers-list {
     grid-template-columns: 1fr;
   }
+
   .speaker-img-container {
     height: 220px;
   }
+}
+
+.patrocinio-wrapper {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.patrocinio-left,
+.patrocinio-right {
+  flex: 1;
+}
+
+.sponsor-logos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.sponsor-logos-grid img {
+  height: 60px;
+  filter: grayscale(1);
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.sponsor-logos-grid img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.sponsor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.sponsor-form input,
+.sponsor-form textarea {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+}
+
+.sponsor-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+#formStatus {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .patrocinio-wrapper {
+    flex-direction: column;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-link {
+    justify-content: center;
+  }
+}
+
+#patrocinio {
+  /* Gradiente padrão do site conforme seu CSS */
+  background: linear-gradient(to right, var(--purple), var(--pink));
+  padding: 80px 6vw;
+}
+
+.patrocinio-wrapper {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.patrocinio-left, .patrocinio-right {
+  flex: 1;
+}
+
+.sponsor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sponsor-form input, .sponsor-form textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.sponsor-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+}
+
+.sponsor-logos-grid img {
+  width: 100%;
+  max-width: 120px;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.sponsor-logos-grid img:hover { opacity: 1; }
+
+@media (max-width: 900px) {
+  .patrocinio-wrapper { flex-direction: column; }
 }

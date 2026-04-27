@@ -521,7 +521,7 @@ footer {
     padding: 0;
     background: url('img/fundo.jpeg');
     background-size: cover;
-    background-position: center;
+    background-position: 20% center;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -602,6 +602,21 @@ footer {
     box-sizing: border-box;
     margin: 0;
     display: block;
+  }
+
+  .contact-col {
+    align-items: flex-start;
+  }
+
+  .contact-col h4 {
+    text-align: left;
+    width: 100%;
+  }
+
+  .contact-col .footer-link {
+    justify-content: flex-start;
+    text-align: left;
+    flex-direction: row;
   }
 
   .social-col {

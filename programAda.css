@@ -520,8 +520,8 @@ footer {
     min-height: 100vh;
     padding: 0;
     background: url('img/fundo.jpeg');
-    background-size: cover;
-    background-position: 20% center;
+    background-size: 200%;
+    background-position: center 30%;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;

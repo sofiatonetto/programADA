@@ -95,6 +95,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  /* Gradiente fixo sobre a imagem */
   background: linear-gradient(160deg, rgba(212, 58, 138, 0.4) 0%, rgba(125, 42, 132, 0.4) 100%), 
               url('img/fundo.jpeg') no-repeat center center;
   background-size: cover;
@@ -102,16 +103,19 @@ body {
   padding: 100px 6vw 50px;
 }
 
+/* --- AJUSTE ESPECÍFICO PARA CELULAR --- */
 @media (max-width: 768px) {
   #hero {
+    /* Mantém a proporção da foto para mostrar todo mundo lateralmente */
     min-height: auto; 
-    aspect-ratio: 4 / 3; 
+    aspect-ratio: 4 / 3; /* Ajusta a altura baseada na largura da foto */
     background-position: top center;
-    background-size: contain; 
+    background-size: contain; /* Garante que a foto apareça inteira na largura */
+    background-color: var(--purple); /* Fundo caso a foto seja muito curta */
     
     display: flex;
     flex-direction: column;
-    padding-top: 140px;
+    padding-top: 140px; /* Espaço para não bater no navbar */
   }
 
   .hero-content {

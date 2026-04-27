@@ -409,68 +409,6 @@ footer {
   transform: translateX(5px);
 }
 
-@media (max-width: 1000px) {
-
-  .footer-inner,
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .contact-col,
-  .social-col {
-    align-items: center;
-  }
-
-  .footer-link {
-    justify-content: center;
-  }
-
-  .team-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 700px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: var(--nav-h);
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    background: var(--purple);
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.3s;
-    padding: 0 5vw;
-  }
-
-  .nav-links.active {
-    max-height: 400px;
-    padding: 20px 5vw;
-  }
-
-  .member-img img {
-    width: 160px;
-    height: 160px;
-  }
-
-  .speakers-list {
-    grid-template-columns: 1fr;
-  }
-
-  .speaker-img-container {
-    height: 220px;
-  }
-}
 #patrocinio {
   background: linear-gradient(to right, var(--purple), var(--pink));
   padding: 80px 6vw;
@@ -528,8 +466,130 @@ footer {
   resize: vertical;
 }
 
+@media (max-width: 1000px) {
+  .footer-inner,
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  .footer-logos {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .contact-col,
+  .social-col {
+    align-items: center;
+    width: 100%;
+  }
+  .footer-link {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 @media (max-width: 900px) {
   .patrocinio-wrapper {
     flex-direction: column-reverse; 
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
+    padding-top: 100px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+  .hero-logo {
+    max-width: 280px;
+    margin-bottom: 15px;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    padding: 0 10px;
+  }
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 20px;
+  }
+  .team-grid {
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  .team-member {
+    flex: 1;
+    max-width: 160px;
+  }
+  .member-img img {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  .member-name {
+    font-size: 0.85rem;
+  }
+  .patrocinio-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .sponsor-form {
+    width: 100%;
+  }
+  .sponsor-form input, 
+  .sponsor-form textarea {
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .sponsor-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+  }
+  .sponsor-logos-grid img {
+    height: 45px;
+  }
+  .footer-link {
+    display: flex;
+    justify-content: flex-start;
+    width: 260px;
+    margin: 0 auto 12px;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--purple);
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+    padding: 0;
+  }
+  .nav-links.active {
+    max-height: 400px;
+    padding: 20px;
+  }
+  .speakers-list {
+    grid-template-columns: 1fr;
+  }
+  .speaker-img-container {
+    height: 220px;
   }
 }

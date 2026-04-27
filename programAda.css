@@ -519,20 +519,23 @@ footer {
   #hero {
     min-height: 100vh;
     padding: 0;
-    background: url('img/fundo.jpeg') no-repeat center top / contain;
+    background: url('img/fundo.jpeg') no-repeat top center;
+    background-size: 100% auto;
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
+    padding-top: 180px;
+    padding-bottom: 40px;
   }
 
   #hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(125, 42, 132, 0.5);
+    background: rgba(125, 42, 132, 0.4);
     pointer-events: none;
   }
 

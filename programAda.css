@@ -605,18 +605,18 @@ footer {
   }
 
   .social-col {
-    align-items: flex-end;
+    align-items: flex-start;
   }
 
   .social-col h4 {
-    text-align: right;
+    text-align: left;
     width: 100%;
   }
 
   .social-col .footer-link {
-    justify-content: flex-end;
-    text-align: right;
-    flex-direction: row-reverse;
+    justify-content: flex-start;
+    text-align: left;
+    flex-direction: row;
   }
 
   .team-grid {
@@ -634,6 +634,7 @@ footer {
   .member-img img {
     width: 120px;
     height: 120px;
+    object-position: center top;
   }
 
   .member-name {

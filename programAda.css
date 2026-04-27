@@ -621,19 +621,19 @@ footer {
 
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     justify-items: center;
   }
 
   .team-member {
     width: 100%;
-    max-width: 150px;
+    max-width: 110px;
   }
 
   .member-img img {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
     object-position: center top;
   }
 

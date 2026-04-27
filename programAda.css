@@ -547,7 +547,6 @@ footer {
   #hero {
     min-height: 100vh;
     padding: 0;
-    background: url('img/fundo.jpeg') no-repeat top center;
     background-size: 100% auto;
     background-color: transparent;
     display: flex;

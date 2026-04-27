@@ -496,57 +496,59 @@ footer {
 
 @media (max-width: 768px) {
   #hero {
-    min-height: 100vh;
-    padding: 90px 4vw 20px;
-    background-size: cover;
-    background-position: center;
+    min-height: 80vh;
+    padding: 100px 6vw 40px;
+    background-size: 100% auto;
+    background-position: center 90px;
+    background-repeat: no-repeat;
+    background-color: var(--purple);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   .hero-tag {
-    font-size: 0.65rem;
-    padding: 5px 15px;
-    margin-bottom: 10px;
+    font-size: 0.55rem;
+    padding: 3px 10px;
+    margin-bottom: 8px;
   }
   .hero-logo {
-    max-width: 190px;
-    margin: 0 auto 10px;
+    max-width: 140px;
+    margin-bottom: 8px;
   }
   .hero-subtitle {
-    font-size: 0.85rem;
-    padding: 0 10px;
-    margin-bottom: 20px;
-    line-height: 1.4;
+    font-size: 0.75rem;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    max-width: 250px;
   }
   .hero-cta {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     width: 100%;
+    align-items: center;
   }
   .btn {
-    width: 220px;
-    margin: 0 auto;
-    padding: 12px 20px;
-    font-size: 0.9rem;
+    width: 180px;
+    padding: 8px 15px;
+    font-size: 0.8rem;
   }
   .team-grid {
     display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
     gap: 10px;
+    justify-content: center !important;
   }
   .team-member {
     flex: 1;
-    max-width: 130px;
+    max-width: 120px;
   }
   .member-img img {
-    width: 100px !important;
-    height: 100px !important;
+    width: 90px !important;
+    height: 90px !important;
   }
   .member-name {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
   .patrocinio-wrapper {
     flex-direction: column;
@@ -562,19 +564,19 @@ footer {
     font-size: 0.9rem;
   }
   .sponsor-form .btn-primary {
-    width: 100% !important;
+    width: 90% !important;
+    max-width: 320px;
     display: block;
     margin: 10px auto 0;
   }
   .social-col {
     align-items: flex-start !important;
-    margin-left: 15%; 
+    padding-left: 10%;
     width: 100%;
   }
   .footer-link {
     justify-content: flex-start !important;
     text-align: left !important;
-    width: auto !important;
   }
   .sponsor-logos-grid {
     display: grid;
@@ -583,10 +585,7 @@ footer {
     justify-items: center;
   }
   .sponsor-logos-grid img {
-    height: 40px;
-  }
-  .hamburger {
-    display: flex;
+    height: 35px;
   }
   .nav-links {
     position: absolute;

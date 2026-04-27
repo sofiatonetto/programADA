@@ -498,27 +498,30 @@ footer {
 @media (max-width: 768px) {
   #hero {
     padding-top: 100px;
-    min-height: 80vh;
+    min-height: 70vh;
+    background-attachment: scroll;
+    background-position: center top;
+    background-size: 180% auto;
     display: flex;
     align-items: center;
   }
   .hero-logo {
-    max-width: 280px;
-    margin-bottom: 15px;
+    max-width: 250px;
+    margin-bottom: 10px;
   }
   .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: 25px;
-    padding: 0 10px;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    padding: 0 15px;
   }
   .hero-cta {
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
   }
   .btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 260px;
     padding: 12px 20px;
   }
   .team-grid {
@@ -529,37 +532,43 @@ footer {
   }
   .team-member {
     flex: 1;
-    max-width: 160px;
+    max-width: 150px;
   }
   .member-img img {
-    width: 120px !important;
-    height: 120px !important;
+    width: 110px !important;
+    height: 110px !important;
   }
   .member-name {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
   .patrocinio-wrapper {
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
   }
   .sponsor-form {
     width: 100%;
+    padding: 0 10px;
   }
   .sponsor-form input, 
   .sponsor-form textarea {
     width: 100% !important;
-    max-width: 100%;
     box-sizing: border-box;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+  .sponsor-form button {
+    width: 100% !important;
+    margin-top: 10px;
   }
   .sponsor-logos-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 15px;
     justify-items: center;
     align-items: center;
   }
   .sponsor-logos-grid img {
-    height: 45px;
+    height: 40px;
   }
   .footer-link {
     display: flex;

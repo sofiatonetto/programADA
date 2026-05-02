@@ -16,6 +16,7 @@
   <nav id="navbar">
     <div class="nav-left">
       <img src="img/programada logo 1.png" alt="Logo" class="nav-logo-img">
+      <img src="img/ada.png" alt="Ada Lovelace" class="nav-ada-img">
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span>
@@ -34,7 +35,7 @@
 
   <section id="hero">
     <div class="hero-content">
-      <span class="hero-tag">TECNOLOGIA COM IDENTIDADE, PROPÓSITO E FUTURO</span>
+      <span class="hero-tag">Tecnologia com identidade, propósito e futuro</span>
       <h1 class="hero-title">
         <img src="img/programada logo 1.png" alt="ProgramADA" class="hero-logo">
       </h1>
@@ -44,19 +45,29 @@
         <a href="#edicoes" class="btn btn-outline">Ver edições</a>
       </div>
     </div>
+    <div class="hero-scroll">Scroll</div>
   </section>
 
   <section id="historia">
     <div class="container">
-      <h2 class="section-title">Nossa história</h2>
-      <p class="p-destaque">O ProgramADA surgiu da vontade de ter um espaço dedicado às mulheres do curso, focado em mostrar todas as possibilidades que a área da tecnologia oferece.</p>
-      <p class="p-normal">Para a nossa primeira edição, tivemos a participação da <span>Patrícia Wazlawick, da Monica Hillman e da Franciele Manfio</span>. O foco principal foi o protagonismo feminino na tecnologia.</p>
+      <div class="historia-inner">
+        <div class="historia-left">
+          <div class="big-year">2025</div>
+        </div>
+        <div class="historia-right">
+          <span class="section-label">Nossa história</span>
+          <h2 class="section-title">De onde <span>viemos</span></h2>
+          <p class="p-destaque">O ProgramADA surgiu da vontade de ter um espaço dedicado às mulheres do curso, focado em mostrar todas as possibilidades que a área da tecnologia oferece.</p>
+          <p class="p-normal">Para a nossa primeira edição, tivemos a participação da <span>Patrícia Wazlawick, da Monica Hillman e da Franciele Manfio</span>. O foco principal foi o protagonismo feminino na tecnologia.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="edicoes">
     <div class="container">
-      <h2 class="section-title">Edições</h2>
+      <span class="section-label">Palestrantes</span>
+      <h2 class="section-title">Edições & <span>Convidadas</span></h2>
       <div class="year-badge">2025</div>
       <div class="speakers-list">
         <article class="speaker-card">
@@ -67,9 +78,9 @@
             <div class="speaker-header">
               <h4 class="speaker-name">Patricia Wazlawick</h4>
             </div>
-            <p class="speaker-desc-visible">palestra sobre "Vida, Inteligência e Tecnologia" e sua viagem para Estônia</p>
-            <div class="speaker-hover-text">
-              <p>Doutora em Psicologia pela UFSC, Pós-Doutoranda em Informática em Saúde UFSC. Atua em projetos de pesquisa em Ontopsicologia, Pedagogia Ontopsicologia e Interfaces Interdisciplinares.</p>
+            <div class="speaker-text-area">
+              <p class="speaker-desc-visible">Palestra sobre "Vida, Inteligência e Tecnologia" e sua viagem para Estônia</p>
+              <div class="speaker-hover-text"><p>Doutora em Psicologia pela UFSC, Pós-Doutoranda em Informática em Saúde UFSC. Atua em projetos de pesquisa em Ontopsicologia, Pedagogia Ontopsicologia e Interfaces Interdisciplinares.</p></div>
             </div>
           </div>
         </article>
@@ -81,9 +92,9 @@
             <div class="speaker-header">
               <h4 class="speaker-name">Monica Hillman</h4>
             </div>
-            <p class="speaker-desc-visible">palestra sobre carreira tech e suas experiências na Alura e Magalu</p>
-            <div class="speaker-hover-text">
-              <p>Especialista em User Experience, com experiência em suporte de T.I e com tecnologias front-end. Atualmente é Tech Community Manager na Magalu Cloud e instrutora na Alura.</p>
+            <div class="speaker-text-area">
+              <p class="speaker-desc-visible">Palestra sobre carreira tech e suas experiências na Alura e Magalu</p>
+              <div class="speaker-hover-text"><p>Especialista em User Experience, com experiência em suporte de T.I e com tecnologias front-end. Atualmente é Tech Community Manager na Magalu Cloud e instrutora na Alura.</p></div>
             </div>
           </div>
         </article>
@@ -95,9 +106,9 @@
             <div class="speaker-header">
               <h4 class="speaker-name">Franciele Manfio</h4>
             </div>
-            <p class="speaker-desc-visible">palestra sobre empreendedorismo e liderança</p>
-            <div class="speaker-hover-text">
-              <p>Psicóloga, com especialização em Gestão do Desenvolvimento Humano e Organizacional, Gestão de Pessoas, Saúde no Trabalho, Psicologia Jurídica.</p>
+            <div class="speaker-text-area">
+              <p class="speaker-desc-visible">Palestra sobre empreendedorismo e liderança</p>
+              <div class="speaker-hover-text"><p>Psicóloga, com especialização em Gestão do Desenvolvimento Humano e Organizacional, Gestão de Pessoas, Saúde no Trabalho, Psicologia Jurídica.</p></div>
             </div>
           </div>
         </article>
@@ -107,51 +118,55 @@
 
   <section id="galeria">
     <div class="container">
+      <span class="section-label">Momentos</span>
       <h2 class="section-title">Galeria</h2>
     </div>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="img/fim.jpg"></div>
-        <div class="swiper-slide"><img src="img/apresentacao.jpg"></div>
-        <div class="swiper-slide"><img src="img/geral.jpg"></div>
-        <div class="swiper-slide"><img src="img/hackathon.jpg"></div>
-        <div class="swiper-slide"><img src="img/coordnos.jpg"></div>
-        <div class="swiper-slide"><img src="img/patriciaApre.jpg"></div>
+        <div class="swiper-slide"><img src="img/fim.jpg" alt="Galeria ProgramADA" loading="lazy" decoding="async"></div>
+        <div class="swiper-slide"><img src="img/apresentacao.jpg" alt="Galeria ProgramADA" loading="lazy" decoding="async"></div>
+        <div class="swiper-slide"><img src="img/geral.jpg" alt="Galeria ProgramADA" loading="lazy" decoding="async"></div>
+        <div class="swiper-slide"><img src="img/hackathon.jpg" alt="Galeria ProgramADA" loading="lazy" decoding="async"></div>
+        <div class="swiper-slide"><img src="img/coordnos.jpg" alt="Galeria ProgramADA" loading="lazy" decoding="async"></div>
+        <div class="swiper-slide"><img src="img/patriciaApre.jpg" alt="Galeria ProgramADA" loading="lazy" decoding="async"></div>
       </div>
     </div>
     <div class="swiper mySwiperReverse">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="img/franApre.jpg"></div>
-        <div class="swiper-slide"><img src="img/monicaApre.jpg"></div>
-        <div class="swiper-slide"><img src="img/todoss.jpg"></div>
-        <div class="swiper-slide"><img src="img/geral.jpg"></div>
-        <div class="swiper-slide"><img src="img/apresentacao.jpg"></div>
-        <div class="swiper-slide"><img src="img/fim.jpg"></div>
+        <div class="swiper-slide"><img src="img/franApre.jpg" alt="Galeria ProgramADA" loading="lazy" decoding="async"></div>
+        <div class="swiper-slide"><img src="img/monicaApre.jpg" alt="Galeria ProgramADA" loading="lazy" decoding="async"></div>
+        <div class="swiper-slide"><img src="img/todoss.jpg" alt="Galeria ProgramADA" loading="lazy" decoding="async"></div>
+        <div class="swiper-slide"><img src="img/geral.jpg" alt="Galeria ProgramADA" loading="lazy" decoding="async"></div>
+        <div class="swiper-slide"><img src="img/apresentacao.jpg" alt="Galeria ProgramADA" loading="lazy" decoding="async"></div>
+        <div class="swiper-slide"><img src="img/fim.jpg" alt="Galeria ProgramADA" loading="lazy" decoding="async"></div>
       </div>
     </div>
   </section>
 
   <section id="patrocinio">
     <div class="container">
-      <h2 class="section-title" style="color: var(--white);">Seja um Patrocinador</h2>
       <div class="patrocinio-wrapper">
         <div class="patrocinio-left">
+          <span class="section-label">Apoie o evento</span>
+          <h2 class="section-title">Seja um <span>Patrocinador</span></h2>
+          <p class="patrocinio-intro">Conecte sua marca a um evento de impacto. Entre em contato e receba nosso pacote de patrocínio.</p>
           <form id="sponsorForm" class="sponsor-form">
             <input type="text" name="nome" placeholder="Nome ou Empresa" required>
             <input type="email" name="email" placeholder="E-mail" required>
             <input type="tel" name="celular" placeholder="Celular (WhatsApp)" required>
             <textarea name="mensagem" placeholder="Fale conosco (opcional)"></textarea>
-            <button type="submit" class="btn btn-primary">Enviar e receber pacote</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary">Enviar e receber pacote</button>
+            <p id="formStatus"></p>
           </form>
         </div>
         <div class="patrocinio-right">
-          <h3 style="color: var(--white); font-family: 'Syne'; margin-bottom: 20px;">Patrocinadores 2025</h3>
+          <h3>Patrocinadores 2025</h3>
           <div class="sponsor-logos-grid">
-            <img src="img/logo-beefprice.png" alt="Sponsor">
-            <img src="img/logo-evolution.png" alt="Sponsor">
-            <img src="img/logo-foxiot.png" alt="Sponsor">
-            <img src="img/logo-ihoot.png" alt="Sponsor">
-            <img src="img/logo-portela.png" alt="Sponsor">
+            <img src="img/logo-beefprice.png" alt="Beefprice">
+            <img src="img/logo-evolution.png" alt="Evolution">
+            <img src="img/logo-foxiot.png" alt="Fox IoT">
+            <img src="img/logo-ihoot.png" alt="iHoot">
+            <img src="img/logo-portela.png" alt="Portela">
           </div>
         </div>
       </div>
@@ -160,15 +175,18 @@
 
   <section id="equipe">
     <div class="container">
-      <h2 class="section-title">Equipe Organizadora</h2>
+      <span class="section-label">Quem faz acontecer</span>
+      <h2 class="section-title">Equipe <span>Organizadora</span></h2>
       <div class="team-grid">
         <div class="team-member">
           <div class="member-img"><img src="img/fernanda.png" alt="Fernanda Soares"></div>
-          <p class="member-name">Fernanda Soares Soares</p>
+          <p class="member-name">Fernanda Soares</p>
+          <p class="member-role">Organizadora</p>
         </div>
         <div class="team-member">
           <div class="member-img"><img src="img/sofia.png" alt="Sofia Valentina"></div>
-          <p class="member-name">Sofia Valentina Tonetto D.</p>
+          <p class="member-name">Sofia Valentina Tonetto</p>
+          <p class="member-role">Organizadora</p>
         </div>
       </div>
     </div>
@@ -182,10 +200,11 @@
           <img src="img/si.png" alt="SI">
           <img src="img/funda.png" alt="Fundação">
         </div>
+        <p class="footer-tagline">Tecnologia com identidade, propósito e futuro.</p>
       </div>
       <div class="footer-content">
         <div class="footer-col contact-col">
-          <h4>Nossos contatos</h4>
+          <h4>Contatos</h4>
           <a href="mailto:coordsi@amf.edu.br" class="footer-link">
             <span class="icon"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.5-8 5-8-5V6l8 5 8-5v2.5Z"/></svg></span>coordsi@amf.edu.br
           </a>
@@ -197,7 +216,7 @@
           </a>
         </div>
         <div class="footer-col social-col">
-          <h4>Nossas redes sociais</h4>
+          <h4>Redes sociais</h4>
           <a href="https://www.instagram.com/si.amf" target="_blank" class="footer-link">
             <span class="icon"><svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm4.25 5.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Zm5.3-.6a1.05 1.05 0 1 0 0 2.1 1.05 1.05 0 0 0 0-2.1Z"/></svg></span>si.amf
           </a>
@@ -212,6 +231,10 @@
           </a>
         </div>
       </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 ProgramADA — Todos os direitos reservados</span>
+      <span>Faculdade AMF · Sistemas de Informação</span>
     </div>
   </footer>
 

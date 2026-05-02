@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
   const sections = document.querySelectorAll('section[id]');
   const navAnchors = document.querySelectorAll('.nav-links a');
+  let ticking = false;
 
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
@@ -17,27 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.style.backgroundColor = 'rgba(125, 42, 132, 0.95)';
-      navbar.style.backdropFilter = 'blur(10px)';
-    } else {
-      navbar.style.backgroundColor = '#7d2a84';
-      navbar.style.backdropFilter = 'none';
-    }
+  const updateScrollState = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
 
     let current = "";
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      if (pageYOffset >= sectionTop - 150) {
+      if (window.scrollY >= section.offsetTop - 150) {
         current = section.getAttribute("id");
       }
     });
 
     navAnchors.forEach((a) => {
-      a.style.opacity = a.getAttribute("href").includes(current) ? "1" : "0.7";
+      a.classList.toggle('active', a.getAttribute("href").includes(current));
     });
-  });
+
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScrollState);
+      ticking = true;
+    }
+  }, { passive: true });
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -58,22 +61,26 @@ document.addEventListener('DOMContentLoaded', () => {
     loop: true,
     speed: 6000,
     allowTouchMove: false,
+    grabCursor: false,
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
+      pauseOnMouseEnter: false,
     },
   };
 
   new Swiper(".mySwiper", swiperOptions);
-
   new Swiper(".mySwiperReverse", {
     ...swiperOptions,
     autoplay: {
       delay: 0,
       disableOnInteraction: false,
+      pauseOnMouseEnter: false,
       reverseDirection: true,
     },
   });
+
+  updateScrollState();
 });
 
 const sponsorForm = document.getElementById('sponsorForm');

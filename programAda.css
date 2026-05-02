@@ -163,10 +163,13 @@ img { display: block; max-width: 100%; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('img/fundo.jpeg');
   background-size: cover;
   background-position: top center;
   z-index: 1;
+  background:
+      radial-gradient(ellipse 80% 60% at 20% 30%, rgba(180, 79, 219, 0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 70%, rgba(224, 58, 142, 0.22) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 50% 10%, rgba(125, 42, 132, 0.18) 0%, transparent 55%);
 }
 
 #hero::after {
@@ -229,30 +232,6 @@ img { display: block; max-width: 100%; }
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
-}
-
-.hero-scroll {
-  position: absolute;
-  bottom: 36px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: rgba(33, 11, 45, 0.48);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  animation: bounce 2s infinite;
-}
-
-.hero-scroll::after {
-  content: '';
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, rgba(125,42,132,0.35), transparent);
 }
 
 @keyframes bounce {
@@ -801,7 +780,7 @@ footer {
 
 .footer-tagline {
   font-size: 0.82rem;
-  color: var(--muted);
+  color: rgba(255,255,255,0.6);
   max-width: 200px;
   line-height: 1.6;
 }

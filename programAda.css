@@ -776,6 +776,9 @@ footer {
   transition: opacity 0.3s;
 }
 
+.footer-logos .logo-amf {
+  height: 35px;
+}
 .footer-logos img:hover { opacity: 1; }
 
 .footer-tagline {

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O Código Perdido de Ada · ProgramADA</title>
+  <link rel="icon" type="image/png" href="../img/ada.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple: #7d2a84; --pink: #e03a8e; --dark: #fbf7fd; --dark2: #f2e8f7;
+      --border: rgba(125, 42, 132, 0.14); --muted: rgba(38, 12, 50, 0.62); --text: #210b2d;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--text); line-height: 1.6; }
+    a { color: inherit; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    nav { position: sticky; top: 0; z-index: 10; background: rgba(251,247,253,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    nav img { height: 34px; }
+    nav a.back { text-decoration: none; font-weight: 700; font-size: 0.9rem; color: var(--purple); }
+
+    header { padding: 80px 0 56px; }
+    .label { display: inline-flex; align-items: center; gap: 10px; color: var(--pink); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+    .label::before { content: ''; width: 18px; height: 2px; background: var(--pink); }
+    h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.1; margin: 14px 0 20px; }
+    h1 span, h2 span { background: linear-gradient(135deg, var(--pink), #b44fdb); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { font-size: 1.12rem; max-width: 760px; color: var(--muted); }
+    .lead strong { color: var(--purple); }
+    .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 36px 0; }
+    .fact { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
+    .fact b { display: block; font-family: 'Syne', sans-serif; font-size: 1.6rem; color: var(--purple); }
+    .fact small { color: var(--muted); font-size: 0.85rem; }
+    .btn { display: inline-block; padding: 14px 26px; border-radius: 100px; background: linear-gradient(135deg, var(--pink), var(--purple)); color: #fff; font-weight: 700; text-decoration: none; box-shadow: 0 10px 26px rgba(125,42,132,0.22); transition: transform .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--purple); border: 1.5px solid var(--purple); box-shadow: none; margin-left: 10px; }
+
+    section { padding: 56px 0; }
+    section.alt { background: var(--dark2); }
+    h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin: 10px 0 18px; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 26px; }
+    .step { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+    .step h3 { font-family: 'Syne', sans-serif; color: var(--purple); font-size: 1.05rem; margin-bottom: 6px; }
+    .step p { color: var(--muted); font-size: 0.93rem; }
+
+    .enigmas { display: grid; gap: 22px; margin-top: 30px; }
+    .enigma { display: grid; grid-template-columns: 300px 1fr; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: 0 10px 30px rgba(125,42,132,0.07); }
+    .enigma .thumb { background: var(--dark2); display: flex; align-items: center; justify-content: center; padding: 14px; }
+    .enigma .thumb img { width: 100%; border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+    .enigma .body { padding: 24px 28px; }
+    .num { font-family: 'Syne', sans-serif; font-weight: 800; color: var(--pink); font-size: 0.8rem; letter-spacing: 0.14em; }
+    .enigma h3 { font-family: 'Syne', sans-serif; font-size: 1.35rem; color: var(--purple); margin: 4px 0 2px; }
+    .who { font-size: 0.85rem; color: var(--muted); margin-bottom: 12px; }
+    .enigma h4 { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pink); margin: 14px 0 4px; }
+    .enigma p { font-size: 0.95rem; }
+    details { margin-top: 14px; border: 1px dashed rgba(125,42,132,0.35); border-radius: 12px; padding: 10px 14px; }
+    summary { cursor: pointer; font-weight: 700; color: var(--purple); font-size: 0.92rem; }
+    details .ans { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: 0.1em; color: var(--pink); margin-top: 8px; }
+    .links { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .links a { font-size: 0.88rem; font-weight: 700; text-decoration: none; color: var(--purple); border: 1px solid var(--border); background: var(--dark); border-radius: 100px; padding: 8px 16px; }
+    .links a:hover { border-color: var(--pink); color: var(--pink); }
+
+    .final { background: linear-gradient(135deg, #2b1452, var(--purple)); color: #fff; border-radius: 22px; padding: 40px; text-align: center; }
+    .final p { opacity: 0.85; max-width: 640px; margin: 0 auto 10px; }
+    .final .ans { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.3rem, 3vw, 2rem); letter-spacing: 0.06em; margin: 14px 0; }
+
+    footer { padding: 40px 0 60px; text-align: center; color: var(--muted); font-size: 0.9rem; }
+    footer a { color: var(--purple); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .facts { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: 1fr; }
+      .enigma { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .btn-outline { margin: 12px 0 0; }
+      .final { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../"><img src="../img/programada logo 1.png" alt="ProgramADA"></a>
+      <a href="../#edicoes" class="back">← Voltar ao ProgramADA</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container">
+      <span class="label">ProgramADA 2026 · Dinâmica</span>
+      <h1>O Código Perdido <span>de Ada</span></h1>
+      <p class="lead">Um escape room em equipes sobre Ada Lovelace e as mulheres que fizeram a história da computação. Cada enigma recria, de forma simples, o trabalho de uma pioneira: decifrar código Morse, ler um cartão perfurado, encontrar um bug, aplicar uma cifra. <strong>Idealizado, escrito e programado por Sofia Valentina Tonetto.</strong></p>
+      <div class="facts">
+        <div class="fact"><b>11</b><small>enigmas impressos</small></div>
+        <div class="fact"><b>6</b><small>enigmas por equipe</small></div>
+        <div class="fact"><b>40 min</b><small>para abrir o cofre</small></div>
+        <div class="fact"><b>14</b><small>sílabas na resposta final</small></div>
+      </div>
+      <a href="jogo/" class="btn" target="_blank" rel="noopener">Abrir o site do jogo</a>
+      <a href="#enigmas" class="btn btn-outline">Ver os enigmas</a>
+    </div>
+  </header>
+
+  <section class="alt">
+    <div class="container">
+      <span class="label">Como funcionou</span>
+      <h2>Do QR code <span>ao cofre</span></h2>
+      <div class="steps">
+        <div class="step"><h3>1. A carta</h3><p>Cada equipe recebe a carta de Ada, com o QR code do site. O cronômetro de 40 minutos começa quando a equipe confirma que está com a carta.</p></div>
+        <div class="step"><h3>2. Cinco enigmas sorteados</h3><p>Os outros dez enigmas formam cinco pares de dificuldade parecida. O site sorteia um de cada par, então todas as equipes têm o mesmo desafio e se espalham pelo prédio.</p></div>
+        <div class="step"><h3>3. O cofre</h3><p>Cada acerto libera sílabas e a pista do próximo local. Com as 14 sílabas, a equipe volta ao auditório e monta a resposta final com a Guardiã.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="enigmas">
+    <div class="container">
+      <span class="label">Os 11 enigmas</span>
+      <h2>Materiais, respostas e <span>como resolver</span></h2>
+      <p class="lead">Cada material pode ser baixado em PDF, pronto para imprimir. A resposta fica escondida: tente resolver antes de abrir.</p>
+
+      <div class="enigmas">
+
+        <article class="enigma">
+          <div class="thumb"><img src="img/01-carta-de-ada.jpg" alt="Enigma 1, A carta de Ada" loading="lazy"></div>
+          <div class="body">
+            <span class="num">ENIGMA 01 · TODAS AS EQUIPES</span>
+            <h3>A carta de Ada</h3>
+            <p class="who">Ada Lovelace e a "ciência poética"</p>
+            <p>Uma carta assinada A.A.L., datada de Londres, 1843, entregue a todas as equipes na largada.</p>
+            <h4>Como resolver</h4>
+            <p>É um acróstico duplo. As primeiras letras das linhas formam a palavra FINAL, um aviso de que a resposta está no fim. As últimas palavras de cada linha, lidas em sequência, dizem "minha resposta sempre foi poesia".</p>
+            <details><summary>Ver resposta</summary><div class="ans">POESIA</div></details>
+            <div class="links"><a href="pdf/01-carta-de-ada.pdf" target="_blank">Baixar PDF</a></div>
+          </div>
+        </article>
+
+        <article class="enigma">
+          <div class="thumb"><img src="img/02-quem-foi-ada.jpg" alt="Enigma 2, Quem foi Ada?" loading="lazy"></div>
+          <div class="body">
+            <span class="num">ENIGMA 02</span>
+            <h3>Quem foi Ada?</h3>
+            <p class="who">Mitos e verdades sobre Ada Lovelace</p>
+            <p>O roteiro de um episódio de podcast com dez afirmações sobre Ada, cada uma com uma letra. O aviso: "Nem tudo o que foi ao ar é verdade. Fiquem só com as mentiras."</p>
+            <h4>Como resolver</h4>
+            <p>Separar as afirmações falsas: Ada não inventou o computador eletrônico, não nasceu nos Estados Unidos, não viveu até os 80 anos, não publicou com o nome completo (assinou só A.A.L.) e a Máquina Analítica nunca foi construída. As letras dessas cinco formam o sobrenome do pai de Ada, o poeta Lord Byron.</p>
+            <details><summary>Ver resposta</summary><div class="ans">BYRON</div></details>
+            <div class="links"><a href="pdf/02-quem-foi-ada.pdf" target="_blank">Baixar PDF</a></div>
+          </div>
+        </article>
+
+        <article class="enigma">
+          <div class="thumb"><img src="img/03-inovar-e-conectar.jpg" alt="Enigma 3, Inovar é conectar" loading="lazy"></div>
+          <div class="body">
+            <span class="num">ENIGMA 03</span>
+            <h3>Inovar é conectar</h3>
+            <p class="who">A linha do tempo da computação</p>
+            <p>Um cartaz com a frase "Inovar é conectar pessoas e ideias" e cinco cartões dobráveis com invenções: tear de Jacquard, Máquina Analítica, ENIAC, ARPANET e World Wide Web. Cada cartão esconde um número.</p>
+            <h4>Como resolver</h4>
+            <p>Colocar as invenções em ordem cronológica. Os números, nessa ordem (6, 7, 25, 11, 18), são posições de letras na frase do cartaz, contada sem os espaços.</p>
+            <details><summary>Ver resposta</summary><div class="ans">REDES</div></details>
+            <div class="links"><a href="pdf/03-inovar-e-conectar.pdf" target="_blank">Baixar PDF (cartaz e cartões)</a></div>
+          </div>
+        </article>
+
+        <article class="enigma">
+          <div class="thumb"><img src="img/04-telegrafo.jpg" alt="Enigma 4, Telégrafo" loading="lazy"></div>
+          <div class="body">
+            <span class="num">ENIGMA 04</span>
+            <h3>Telégrafo</h3>
+            <p class="who">Criptografia na Segunda Guerra</p>
+            <p>Uma tabela de código Morse e um áudio, tocado pelo site três vezes, com sinais curtos e longos.</p>
+            <h4>Como resolver</h4>
+            <p>Ouvir, anotar sinal por sinal e traduzir com a tabela. A mensagem é a pergunta "Quem quebrou a Enigma?", e a resposta é o sobrenome do matemático que liderou a quebra da máquina alemã, em uma equipe de Bletchley Park formada em sua maioria por mulheres.</p>
+            <details><summary>Ver resposta</summary><div class="ans">TURING</div></details>
+            <div class="links"><a href="pdf/04-telegrafo.pdf" target="_blank">Baixar PDF</a><a href="pdf/04-telegrafo-audio.mp3" target="_blank">Ouvir o áudio</a></div>
+          </div>
+        </article>
+
+        <article class="enigma">
+          <div class="thumb"><img src="img/05-quem-sou-eu.jpg" alt="Enigma 5, Quem sou eu?" loading="lazy"></div>
+          <div class="body">
+            <span class="num">ENIGMA 05</span>
+            <h3>Quem sou eu?</h3>
+            <p class="who">Hedy Lamarr, Grace Hopper, Katherine Johnson, Margaret Hamilton e Ada Lovelace</p>
+            <p>Cinco retratos na parede, cada um com nome, datas e uma letra, e cinco frases em primeira pessoa, como "Fui atriz de cinema e inventei a base do Wi-Fi".</p>
+            <h4>Como resolver</h4>
+            <p>Descobrir quem disse cada frase e anotar a letra do retrato, na ordem das frases: Hedy (A), Grace (P), Katherine (O), Margaret (L) e Ada (O). A resposta lembra que mulheres fizeram os cálculos e o software das missões espaciais.</p>
+            <details><summary>Ver resposta</summary><div class="ans">APOLO</div></details>
+            <div class="links"><a href="pdf/05-quem-sou-eu.pdf" target="_blank">Baixar PDF (charadas e retratos)</a></div>
+          </div>
+        </article>
+
+        <article class="enigma">
+          <div class="thumb"><img src="img/06-telegrama.jpg" alt="Enigma 6, Telegrama" loading="lazy"></div>
+          <div class="body">
+            <span class="num">ENIGMA 06</span>
+            <h3>Telegrama</h3>
+            <p class="who">Cifra de César</p>
+            <p>Um telegrama "urgente" com letras embaralhadas. A pista: "A chave está pendurada no seu pescoço: contem quem apoia o ProgramADA." E o P.S.: "toda mensagem tem um começo. Às vezes, ele está no fim."</p>
+            <h4>Como resolver</h4>
+            <p>A chave é o número de patrocinadores impressos no crachá: 7. Lendo a mensagem de trás para frente e voltando cada letra 7 posições no alfabeto (H vira A), aparece o nome de quem a dinâmica homenageia.</p>
+            <details><summary>Ver resposta</summary><div class="ans">PIONEIRAS</div></details>
+            <div class="links"><a href="pdf/06-telegrama.pdf" target="_blank">Baixar PDF</a></div>
+          </div>
+        </article>
+
+        <article class="enigma">
+          <div class="thumb"><img src="img/07-cartao-perfurado.jpg" alt="Enigma 7, O cartão perfurado" loading="lazy"></div>
+          <div class="body">
+            <span class="num">ENIGMA 07</span>
+            <h3>O cartão perfurado</h3>
+            <p class="who">As seis programadoras do ENIAC</p>
+            <p>Em 1946, seis mulheres programaram uma máquina enorme sem manual, só com diagramas, cabos e chaves. Este cartão guarda o nome dela.</p>
+            <h4>Como resolver</h4>
+            <p>Cada coluna tem dois furos que formam um número de dois dígitos, lido de cima para baixo (0 e 5 viram 05). Cada número é uma letra do alfabeto, com A = 01: 05, 14, 09, 01, 03.</p>
+            <details><summary>Ver resposta</summary><div class="ans">ENIAC</div></details>
+            <div class="links"><a href="pdf/07-cartao-perfurado.pdf" target="_blank">Baixar PDF</a></div>
+          </div>
+        </article>
+
+        <article class="enigma">
+          <div class="thumb"><img src="img/08-a-mao-escorregou.jpg" alt="Enigma 8, A mão escorregou" loading="lazy"></div>
+          <div class="body">
+            <span class="num">ENIGMA 08</span>
+            <h3>A mão escorregou</h3>
+            <p class="who">Margaret Hamilton e o software da Apollo</p>
+            <p>A engenheira que escreveu o programa que levou o homem à Lua deixou o sobrenome aqui, mas digitou com pressa, e a mão ficou uma tecla para a direita: J S , O Ç Y P M.</p>
+            <h4>Como resolver</h4>
+            <p>Usando o desenho do teclado, trocar cada caractere pela tecla à esquerda dele. Margaret Hamilton defendia que os programas precisam prever o erro humano, o mesmo tipo de erro que as equipes corrigem.</p>
+            <details><summary>Ver resposta</summary><div class="ans">HAMILTON</div></details>
+            <div class="links"><a href="pdf/08-a-mao-escorregou.pdf" target="_blank">Baixar PDF</a></div>
+          </div>
+        </article>
+
+        <article class="enigma">
+          <div class="thumb"><img src="img/09-diario-do-primeiro-bug.jpg" alt="Enigma 9, O diário do primeiro bug" loading="lazy"></div>
+          <div class="body">
+            <span class="num">ENIGMA 09</span>
+            <h3>O diário do primeiro bug</h3>
+            <p class="who">Grace Hopper e o Harvard Mark II</p>
+            <p>A página do diário de operação do Harvard Mark II, de 9 de setembro de 1947, caiu e os registros se embaralharam.</p>
+            <h4>Como resolver</h4>
+            <p>Colocar os oito registros em ordem de horário, de 08:00 a 16:00. As primeiras letras revelam o "culpado" pela falha: o inseto preso no relé. É o processo de depuração, que Grace Hopper adorava contar.</p>
+            <details><summary>Ver resposta</summary><div class="ans">MARIPOSA</div></details>
+            <div class="links"><a href="pdf/09-diario-do-primeiro-bug.pdf" target="_blank">Baixar PDF</a></div>
+          </div>
+        </article>
+
+        <article class="enigma">
+          <div class="thumb"><img src="img/10-grade-de-pixels.jpg" alt="Enigma 10, A grade de pixels" loading="lazy"></div>
+          <div class="body">
+            <span class="num">ENIGMA 10</span>
+            <h3>A grade de pixels</h3>
+            <p class="who">Hedy Lamarr e o salto de frequência</p>
+            <p>Em 1942, a atriz Hedy Lamarr patenteou uma ideia que hoje está no bolso de vocês. Uma grade de 20 colunas (A a T) e 7 linhas e uma lista de 40 coordenadas.</p>
+            <h4>Como resolver</h4>
+            <p>Pintar cada célula da lista, como na batalha naval (D4 é coluna D, linha 4). As letras aparecem na grade, pixel a pixel.</p>
+            <details><summary>Ver resposta</summary><div class="ans">WIFI</div></details>
+            <div class="links"><a href="pdf/10-grade-de-pixels.pdf" target="_blank">Baixar PDF</a></div>
+          </div>
+        </article>
+
+        <article class="enigma">
+          <div class="thumb"><img src="img/11-luzes-acesas.jpg" alt="Enigma 11, As luzes acesas" loading="lazy"></div>
+          <div class="body">
+            <span class="num">ENIGMA 11</span>
+            <h3>As luzes acesas</h3>
+            <p class="who">O sistema binário e a ideia de Ada</p>
+            <p>Computadores só entendem duas coisas: ligado e desligado. Com só isso, escrevem qualquer palavra. Fileiras de cinco lâmpadas valem 16, 8, 4, 2 e 1.</p>
+            <h4>Como resolver</h4>
+            <p>Em cada fileira, somar as lâmpadas acesas (2, 9, 14, 1, 18, 9, 15) e transformar cada soma em letra, com A = 1. A palavra é o nome desse jeito de contar, e retoma a ideia de Ada de que a máquina poderia trabalhar com símbolos, não só com números.</p>
+            <details><summary>Ver resposta</summary><div class="ans">BINÁRIO</div></details>
+            <div class="links"><a href="pdf/11-luzes-acesas.pdf" target="_blank">Baixar PDF</a></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <div class="final">
+        <span class="label" style="color:#ffc9e6">O cofre</span>
+        <p style="margin-top:14px">"Ada escreveu o primeiro programa da história para ela. O que era, e quem a inventou?"</p>
+        <details style="border-color:rgba(255,255,255,0.4);max-width:520px;margin:18px auto 0"><summary style="color:#fff">Ver a resposta final</summary><div class="ans">MÁQUINA ANALÍTICA DE CHARLES BABBAGE</div></details>
+        <p style="margin-top:16px">A máquina leva o nome de um homem, mas o primeiro programa foi escrito por uma mulher.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>O Código Perdido de Ada · ProgramADA 2026 · criado por Sofia Valentina Tonetto</p>
+      <p style="margin-top:8px"><a href="../">Voltar ao site do ProgramADA</a></p>
+    </div>
+  </footer>
+</body>
+</html>

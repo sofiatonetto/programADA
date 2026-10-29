@@ -1053,14 +1053,36 @@ footer {
 
 .p-normal + .p-normal { margin-top: 14px; }
 
-.speakers-list-2026 { grid-template-columns: repeat(4, 1fr); gap: 22px; }
-.speakers-list-2026 .speaker-img-container { height: 260px; }
-.speaker-img-left { object-position: 20% center; }
+.speaker-img-left { object-position: 46% center; }
 .team-intro {
   color: var(--muted);
   max-width: 620px;
   margin: -20px auto 40px;
   line-height: 1.7;
 }
-@media (max-width: 1100px) { .speakers-list-2026 { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 900px)  { .speakers-list-2026 { grid-template-columns: 1fr; } }
+
+/* Card largo do escape room (2026) */
+.escape-wide {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  margin-top: 28px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(125,42,132,0.08);
+}
+.escape-wide-img { min-height: 340px; }
+.escape-wide-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.escape-wide-content { padding: 36px 40px; display: flex; flex-direction: column; justify-content: center; }
+.escape-wide-tag {
+  color: var(--pink); font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px;
+}
+.escape-wide-content p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; margin-top: 12px; }
+.escape-wide-content .escape-wide-credit { color: var(--purple); font-weight: 700; }
+@media (max-width: 900px) {
+  .escape-wide { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .escape-wide-img { min-height: 0; height: 260px; }
+  .escape-wide-content { padding: 24px; }
+}

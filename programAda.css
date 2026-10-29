@@ -1086,3 +1086,6 @@ footer {
   .escape-wide-img { min-height: 0; height: 260px; }
   .escape-wide-content { padding: 24px; }
 }
+
+/* Ajuste da foto da Isa */
+.member-img img[src*="isaOrg"] { object-position: center 45%; }
